@@ -1,11 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CookBook"
              x:Class="CookBook.MainPage">
-
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
-</ContentPage>
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#e8e8e8">
+            <StackLayout Orientation="Vertical">
+                <!--Navigation Title-->
+                <StackLayout BackgroundColor="#e74c3c" HeightRequest="75">
+                    <Label Text="Some Text title" 
+                           FontSize="20" 
+                           VerticalOptions="CenterAndExpand"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+                <!--Navigation List-->
+                <ListView x:Name="navigationList"
+                          RowHeight="60"
+                          SeparatorVisibility="None"
+                          BackgroundColor="#e8e8e8"
+                          ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type local:MasterPageItem}">
+                            <local:MasterPageItem Title="Home Page" Icon="icon.png" TargetType="{x:Type local:Views.HomePage}" />
+                            <local:MasterPageItem Title="Categories" Icon="icon.png" TargetType="{x:Type local:Views.CategoriesPage}" />
+                        </x:Array>
+                    </ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="20,10,0,10"
+                                             Spacing="20">
+                                    <Image Source="{Binding Icon}"
+                                           WidthRequest="40"
+                                           HeightRequest="40"
+                                           VerticalOptions="Center" />
+                                    <Label Text="{Binding Title}"
+                                           FontSize="Medium"
+                                           VerticalOptions="Center"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:Views.HomePage />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

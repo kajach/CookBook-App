@@ -7,11 +7,29 @@ using Xamarin.Forms;
 
 namespace CookBook
 {
-	public partial class MainPage : ContentPage
-	{
-		public MainPage()
+	public partial class MainPage : MasterDetailPage
+    {
+        public MainPage()
 		{
-			InitializeComponent();
-		}
-	}
+            InitializeComponent();
+
+            // Below code is implemented in xaml
+            //var menuItems = new List<MasterPageItem>();
+            //menuItems.Add(new MasterPageItem() { Title = "Home Page", Icon = "icon.png", TargetType = typeof(Views.HomePage)});
+            //menuItems.Add(new MasterPageItem() { Title = "Home Page", Icon = "icon.png", TargetType = typeof(Views.CategoriesPage) });
+            //navigationList.ItemsSource = menuItems;
+            //Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage)));
+        }
+
+        private void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem as MasterPageItem;
+            if (item != null)
+            {
+                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+                navigationList.SelectedItem = null;
+                IsPresented = false;
+            }
+        }
+    }
 }
