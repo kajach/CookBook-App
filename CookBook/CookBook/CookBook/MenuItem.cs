@@ -2,7 +2,7 @@
 
 namespace CookBook
 {
-    public class MasterPageItem
+    public class MenuItem
     {
         public string Title { get; set; }
 

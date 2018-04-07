@@ -21,9 +21,9 @@
                           BackgroundColor="#e8e8e8"
                           ItemSelected="OnMenuItemSelected">
                     <ListView.ItemsSource>
-                        <x:Array Type="{x:Type local:MasterPageItem}">
-                            <local:MasterPageItem Title="Home Page" Icon="icon.png" TargetType="{x:Type local:Views.HomePage}" />
-                            <local:MasterPageItem Title="Categories" Icon="icon.png" TargetType="{x:Type local:Views.CategoriesPage}" />
+                        <x:Array Type="{x:Type local:MenuItem}">
+                            <local:MenuItem Title="Home" Icon="icon.png" TargetType="{x:Type local:Views.HomePage}" />
+                            <local:MenuItem Title="Categories" Icon="icon.png" TargetType="{x:Type local:Views.CategoriesPage}" />
                         </x:Array>
                     </ListView.ItemsSource>
                     <ListView.ItemTemplate>

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xamarin.Forms;
 
 namespace CookBook
@@ -13,7 +9,7 @@ namespace CookBook
 		{
 			InitializeComponent();
 
-			MainPage = new CookBook.MainPage();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace CookBook
@@ -14,16 +10,16 @@ namespace CookBook
             InitializeComponent();
 
             // Below code is implemented in xaml
-            //var menuItems = new List<MasterPageItem>();
-            //menuItems.Add(new MasterPageItem() { Title = "Home Page", Icon = "icon.png", TargetType = typeof(Views.HomePage)});
-            //menuItems.Add(new MasterPageItem() { Title = "Home Page", Icon = "icon.png", TargetType = typeof(Views.CategoriesPage) });
+            //var menuItems = new List<MenuItem>();
+            //menuItems.Add(new MenuItem() { Title = "Home Page", Icon = "icon.png", TargetType = typeof(Views.HomePage)});
+            //menuItems.Add(new MenuItem() { Title = "Categories", Icon = "icon.png", TargetType = typeof(Views.CategoriesPage) });
             //navigationList.ItemsSource = menuItems;
             //Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePage)));
         }
 
         private void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as MasterPageItem;
+            var item = e.SelectedItem as MenuItem;
             if (item != null)
             {
                 Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
