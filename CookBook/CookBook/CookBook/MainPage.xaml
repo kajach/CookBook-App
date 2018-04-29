@@ -24,6 +24,7 @@
                         <x:Array Type="{x:Type local:MenuItem}">
                             <local:MenuItem Title="Home" Icon="icon.png" TargetType="{x:Type local:Views.HomePage}" />
                             <local:MenuItem Title="Categories" Icon="icon.png" TargetType="{x:Type local:Views.CategoriesPage}" />
+                            <local:MenuItem Title="All Recipes" Icon="icon.png" TargetType="{x:Type local:Views.RecipeListPage}" />
                         </x:Array>
                     </ListView.ItemsSource>
                     <ListView.ItemTemplate>

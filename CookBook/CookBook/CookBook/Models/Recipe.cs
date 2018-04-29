@@ -13,6 +13,5 @@ namespace CookBook.Models
         public string ThumbnailImage { get; set; }
         public string Description { get; set; }
         public string Instructions { get; set; }
-        public List<string> Ingredients { get; set; }
     }
 }
