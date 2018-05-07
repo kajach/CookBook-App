@@ -1,20 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CookBook.Views.RecipeListPage">
-    <ListView x:Name="RecipeList"
+             x:Class="CookBook.Views.RecipeListPage"
+             BackgroundColor="LightGray"
+             Title="Recipes">
+    <ListView x:Name="recipeList"
               ItemsSource="{Binding Recipes}"
-              ItemTapped="Handle_ItemTapped"
-              CachingStrategy="RecycleElement"
-              RowHeight="60">
+              ItemTapped="OnItemTapped"
+              SeparatorVisibility="None"
+              Margin="10,5,10,10"
+              RowHeight="105">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout Margin="8">
-                        <Label Text="{Binding Id}"
-                               FontAttributes="Bold" />
-                        <Label Text="{Binding Name}" />
-                    </StackLayout>
+                    <Grid BackgroundColor="#ffffff" 
+                          Margin="0,5,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Source="{Binding MainImage}"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="StartAndExpand"
+                                   HeightRequest="100"
+                                   Grid.Column="0"
+                                   Grid.Row="0"/>
+
+                        <StackLayout VerticalOptions="CenterAndExpand"
+                                     Margin="5,0,5,0" 
+                                     Grid.Column="1"
+                                     Grid.Row="0">
+                            <Label Text="{Binding Name}"
+                                   TextColor="#333333"
+                                   FontAttributes="Bold"
+                                   LineBreakMode="TailTruncation"/>
+                            <Label Text="{Binding Category}"
+                                   TextColor="#333333"/>
+                        </StackLayout>
+                    </Grid>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
