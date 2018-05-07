@@ -1,12 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CookBook.Views.HomePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="What's cooking today?"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
+             xmlns:local="clr-namespace:CookBook"
+             x:Class="CookBook.Views.HomePage"
+             BackgroundColor="LightGray"
+             Title="YACA">
+    <StackLayout Spacing="0">
+        <StackLayout BackgroundColor="#c20a0a"
+                     HeightRequest="50">
         </StackLayout>
-    </ContentPage.Content>
+        <Image Source="{local:ImageResource Images.herobanner.jpg}" 
+               HeightRequest="200" 
+               Aspect="AspectFill"
+               BackgroundColor="IndianRed"/>
+        <StackLayout Orientation="Horizontal"
+                     Spacing="0"
+                     Margin="10,5,7,0">
+            <BoxView Color="#c20a0a" 
+                     WidthRequest="3"
+                     HeightRequest="20"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Start"
+                     Margin="0,15,0,0"/>
+            <Label Text="Make it spicy!"
+                   TextColor="#333333"
+                   FontSize="20"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Start"
+                   Margin="5,10,5,0"/>
+            <Button Text="See More"
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    BackgroundColor="Green"
+                    Margin="0" />
+        </StackLayout>
+        <Grid Margin="10,5,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <StackLayout Grid.Column="0"
+                         Grid.Row="0"
+                         BackgroundColor="#ffffff"
+                         VerticalOptions="FillAndExpand">
+                <Image Source="recipe_001.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="150" />
+                <Label Text="Chicken with mushrooms, bacon and asparagus"
+                       TextColor="#333333"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       LineBreakMode="TailTruncation"
+                       Margin="10,5,10,10" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="1"
+                         Grid.Row="0"
+                         BackgroundColor="#ffffff"
+                         VerticalOptions="FillAndExpand">
+                <Image Source="recipe_002.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="150" />
+                <Label Text="Spaghetti Bolognese"
+                       TextColor="#333333"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       LineBreakMode="TailTruncation"
+                       Margin="10,5,10,10" />
+            </StackLayout>
+        </Grid>
+    </StackLayout>
 </ContentPage>
