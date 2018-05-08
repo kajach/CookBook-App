@@ -2,9 +2,50 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CookBook.App">
-	<Application.Resources>
-
-		<!-- Application resource dictionary -->
-
-	</Application.Resources>
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#AF0B0B</Color>
+            <Color x:Key="PrimaryColorDark">#910000</Color>
+            <Color x:Key="PrimaryColorLight">#D41C1C</Color>
+            <Color x:Key="SecondaryColor">#007000</Color>
+            <Color x:Key="PageBackgroundColor">#F5F5F5</Color>
+            <Color x:Key="TextBackgroundColor">#FFFFFF</Color>
+            <Color x:Key="DarkTextColor">#333333</Color>
+            <Color x:Key="LightTextColor">#FFFFFF</Color>
+            <Style x:Key="HeroHeadingStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="LineHeadingStyle" TargetType="BoxView">
+                <Setter Property="Color" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="WidthRequest" Value="3" />
+                <Setter Property="HeightRequest" Value="20" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="SectionHeadingStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="MoreButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
+            </Style>
+            <Style x:Key="HeadingStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
+            </Style>
+            <Style x:Key="SubheadingStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

@@ -3,77 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CookBook"
              x:Class="CookBook.Views.HomePage"
-             BackgroundColor="LightGray"
+             BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="YACA">
-    <StackLayout Spacing="0">
-        <StackLayout BackgroundColor="#c20a0a"
-                     HeightRequest="50">
-        </StackLayout>
-        <Image Source="{local:ImageResource Images.herobanner.jpg}" 
-               HeightRequest="200" 
-               Aspect="AspectFill"
-               BackgroundColor="IndianRed"/>
-        <StackLayout Orientation="Horizontal"
-                     Spacing="0"
-                     Margin="10,5,7,0">
-            <BoxView Color="#c20a0a" 
-                     WidthRequest="3"
-                     HeightRequest="20"
-                     HorizontalOptions="Start"
-                     VerticalOptions="Start"
-                     Margin="0,15,0,0"/>
-            <Label Text="Make it spicy!"
-                   TextColor="#333333"
-                   FontSize="20"
-                   HorizontalOptions="StartAndExpand"
-                   VerticalOptions="Start"
-                   Margin="5,10,5,0"/>
-            <Button Text="See More"
-                    FontAttributes="Bold"
-                    FontSize="15"
-                    HorizontalOptions="End"
-                    VerticalOptions="End"
-                    BackgroundColor="Green"
-                    Margin="0" />
-        </StackLayout>
-        <Grid Margin="10,5,10,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <StackLayout Grid.Column="0"
-                         Grid.Row="0"
-                         BackgroundColor="#ffffff"
-                         VerticalOptions="FillAndExpand">
-                <Image Source="recipe_001.jpg"
-                       Aspect="AspectFill"
-                       HeightRequest="150" />
-                <Label Text="Chicken with mushrooms, bacon and asparagus"
-                       TextColor="#333333"
-                       FontSize="15"
-                       FontAttributes="Bold"
-                       LineBreakMode="TailTruncation"
-                       Margin="10,5,10,10" />
+    <ScrollView Orientation="Vertical">
+        <StackLayout Spacing="0">
+            <StackLayout BackgroundColor="{StaticResource PrimaryColor}">
+                <SearchBar Placeholder="Search for "
+                           BackgroundColor="{StaticResource TextBackgroundColor}"
+                           Margin="10"/>
+                <!--<BoxView BackgroundColor="#FFFFFF" 
+                         HorizontalOptions="FillAndExpand" 
+                         VerticalOptions="FillAndExpand"
+                         Margin="10"/>-->
             </StackLayout>
-
-            <StackLayout Grid.Column="1"
-                         Grid.Row="0"
-                         BackgroundColor="#ffffff"
-                         VerticalOptions="FillAndExpand">
-                <Image Source="recipe_002.jpg"
+            <Grid>
+                <Image Source="{local:ImageResource Images.herobanner.jpg}"
                        Aspect="AspectFill"
-                       HeightRequest="150" />
-                <Label Text="Spaghetti Bolognese"
-                       TextColor="#333333"
-                       FontSize="15"
-                       FontAttributes="Bold"
-                       LineBreakMode="TailTruncation"
-                       Margin="10,5,10,10" />
+                       HeightRequest="200" 
+                       BackgroundColor="IndianRed"/>
+                <Label Text="What's cooking today?"
+                       Style="{StaticResource HeroHeadingStyle}" />
+            </Grid>
+            <StackLayout Orientation="Horizontal" Margin="10,5,7,0">
+                <BoxView Style="{StaticResource LineHeadingStyle}" />
+                <Label Text="Make it spicy!" 
+                       Style="{StaticResource SectionHeadingStyle}" />
+                <Button Text="See More" 
+                        Style="{StaticResource MoreButtonStyle}" />
             </StackLayout>
-        </Grid>
-    </StackLayout>
+            <Grid Margin="10,5,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout BackgroundColor="{StaticResource TextBackgroundColor}"
+                             VerticalOptions="FillAndExpand"
+                             Grid.Column="0"
+                             Grid.Row="0">
+                    <Image Source="recipe_001.jpg"
+                           Aspect="AspectFill"
+                           HeightRequest="150" />
+                    <Label Text="Chicken with dried tomatoes, bacon and asparagus"
+                           Style="{StaticResource HeadingStyle}"
+                           Margin="10,5,10,10" />
+                </StackLayout>
+                <StackLayout BackgroundColor="{StaticResource TextBackgroundColor}"
+                             VerticalOptions="FillAndExpand"
+                             Grid.Column="1"
+                             Grid.Row="0">
+                    <Image Source="recipe_002.jpg"
+                           Aspect="AspectFill"
+                           HeightRequest="150" />
+                    <Label Text="Spaghetti Bolognese"
+                           Style="{StaticResource HeadingStyle}"
+                           Margin="10,5,10,10" />
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
