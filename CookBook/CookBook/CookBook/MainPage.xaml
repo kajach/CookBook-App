@@ -4,22 +4,27 @@
              xmlns:local="clr-namespace:CookBook"
              x:Class="CookBook.MainPage">
     <MasterDetailPage.Master>
-        <ContentPage Title="Menu" BackgroundColor="#e8e8e8">
+        <ContentPage Title="Menu">
             <StackLayout Orientation="Vertical">
                 <!--Navigation Title-->
-                <StackLayout BackgroundColor="#e74c3c" HeightRequest="75">
-                    <Label Text="Some Text title" 
+                <StackLayout BackgroundColor="#c20a0a" HeightRequest="75">
+                    <Label Text="YACA" 
+                           TextColor="#ffffff"
                            FontSize="20" 
                            VerticalOptions="CenterAndExpand"
-                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Yet Another Cookbook App" 
+                           TextColor="#ffffff"
+                           FontSize="15" 
+                           VerticalOptions="CenterAndExpand"
                            HorizontalOptions="Center"/>
                 </StackLayout>
                 <!--Navigation List-->
                 <ListView x:Name="navigationList"
-                          RowHeight="60"
+                          ItemSelected="OnMenuItemSelected"
                           SeparatorVisibility="None"
-                          BackgroundColor="#e8e8e8"
-                          ItemSelected="OnMenuItemSelected">
+                          BackgroundColor="#ffffff"
+                          RowHeight="60">
                     <ListView.ItemsSource>
                         <x:Array Type="{x:Type local:MenuItem}">
                             <local:MenuItem Title="Home" Icon="icon.png" TargetType="{x:Type local:Views.HomePage}" />
@@ -30,18 +35,18 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout VerticalOptions="FillAndExpand"
-                                             Orientation="Horizontal"
+                                <StackLayout Orientation="Horizontal"
+                                             VerticalOptions="FillAndExpand"
                                              Padding="20,10,0,10"
                                              Spacing="20">
                                     <Image Source="{Binding Icon}"
-                                           WidthRequest="40"
-                                           HeightRequest="40"
-                                           VerticalOptions="Center" />
-                                    <Label Text="{Binding Title}"
-                                           FontSize="Medium"
                                            VerticalOptions="Center"
-                                           TextColor="Black"/>
+                                           WidthRequest="40"
+                                           HeightRequest="40" />
+                                    <Label Text="{Binding Title}"
+                                           TextColor="#333333"
+                                           FontSize="Medium"
+                                           VerticalOptions="Center" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
