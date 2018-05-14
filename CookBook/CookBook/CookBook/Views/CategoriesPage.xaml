@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CookBook.Views.CategoriesPage">
+             x:Class="CookBook.Views.CategoriesPage"
+             BackgroundColor="{StaticResource PageBackgroundColor}"
+             Title="Categories">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="All Cetegories!"
                    VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
+                   HorizontalOptions="CenterAndExpand" 
+                   TextColor="{StaticResource DarkTextColor}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

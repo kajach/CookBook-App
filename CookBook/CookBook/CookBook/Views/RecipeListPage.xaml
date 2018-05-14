@@ -7,6 +7,7 @@
     <ListView x:Name="recipeList"
               ItemsSource="{Binding Recipes}"
               ItemTapped="OnItemTapped"
+              CachingStrategy="RecycleElement"
               SeparatorVisibility="None"
               Margin="10"
               RowHeight="105">

@@ -21,7 +21,7 @@ namespace CookBook.Views
 
             ((ListView)sender).SelectedItem = null;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await Navigation.PushAsync(new RecipeDetailPage());
         }
     }
 }

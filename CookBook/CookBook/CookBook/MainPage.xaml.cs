@@ -12,10 +12,9 @@ namespace CookBook
 
         private async void OnMenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as MenuItem;
-            if (item != null)
+            if (e.SelectedItem is MenuItem item)
             {
-                ((ListView)sender).SelectedItem = null;
+                //((ListView)sender).SelectedItem = null;
                 var root = Detail.Navigation.NavigationStack[0];
                 Detail.Navigation.InsertPageBefore((Page)Activator.CreateInstance(item.TargetType), root);
                 await Detail.Navigation.PopToRootAsync();

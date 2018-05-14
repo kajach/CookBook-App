@@ -8,13 +8,13 @@
     <ScrollView Orientation="Vertical">
         <StackLayout Spacing="0">
             <StackLayout BackgroundColor="{StaticResource PrimaryColor}">
-                <SearchBar Placeholder="Search for "
+                <!--<SearchBar Placeholder="Search for "
                            BackgroundColor="{StaticResource TextBackgroundColor}"
-                           Margin="10"/>
-                <!--<BoxView BackgroundColor="#FFFFFF" 
+                           Margin="10"/>-->
+                <BoxView BackgroundColor="White" 
                          HorizontalOptions="FillAndExpand" 
                          VerticalOptions="FillAndExpand"
-                         Margin="10"/>-->
+                         Margin="10"/>
             </StackLayout>
             <Grid>
                 <Image Source="{local:ImageResource Images.herobanner.jpg}"
@@ -22,26 +22,17 @@
                        HeightRequest="200" 
                        BackgroundColor="IndianRed"/>
                 <Label Text="What's cooking today?"
-                       Style="{StaticResource HeroHeadingStyle}" />
+                       Style="{StaticResource HeroHeadingStyle}"/>
             </Grid>
-            <StackLayout Orientation="Horizontal" Margin="10,5,7,0">
-                <BoxView Style="{StaticResource LineHeadingStyle}" />
+            <StackLayout Orientation="Horizontal" Margin="10,5,10,0">
+                <BoxView Style="{StaticResource LineHeadingStyle}"/>
                 <Label Text="Make it spicy!" 
-                       Style="{StaticResource SectionHeadingStyle}" />
-                <Button Text="See More" 
-                        Style="{StaticResource MoreButtonStyle}" />
+                       Style="{StaticResource SectionHeadingStyle}"/>
+                <Button Text="View More" 
+                        Style="{StaticResource MoreButtonStyle}"/>
             </StackLayout>
             <Grid Margin="10,5,10,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
                 <StackLayout BackgroundColor="{StaticResource TextBackgroundColor}"
-                             VerticalOptions="FillAndExpand"
                              Grid.Column="0"
                              Grid.Row="0">
                     <Image Source="recipe_001.jpg"
@@ -52,7 +43,6 @@
                            Margin="10,5,10,10" />
                 </StackLayout>
                 <StackLayout BackgroundColor="{StaticResource TextBackgroundColor}"
-                             VerticalOptions="FillAndExpand"
                              Grid.Column="1"
                              Grid.Row="0">
                     <Image Source="recipe_002.jpg"
