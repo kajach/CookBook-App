@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CookBook"
+             x:Class="CookBook.Views.RecipeIngredientsPage"
+             Title="Ingredients">
+    <StackLayout Orientation="Vertical"
+                 BackgroundColor="{StaticResource TextBackgroundColor}">
+        <!--Navigation Title-->
+        <StackLayout Orientation="Horizontal" 
+                     BackgroundColor="{StaticResource PrimaryColor}"
+                     Padding="20"
+                     Spacing="15">
+            <Image Source="icon.png"
+                   HeightRequest="50"/>
+            <StackLayout>
+                <Label Text="YACA" 
+                       Style="{StaticResource MenuTitleStyle}"/>
+                <Label Text="Yet Another Cookbook App" 
+                       Style="{StaticResource MenuSubTitleStyle}"/>
+            </StackLayout>
+        </StackLayout>
+        <!--Navigation List-->
+        <ListView x:Name="navigationList"
+                  SeparatorVisibility="None"
+                  RowHeight="50"
+                  Margin="20,5,10,10">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:MenuItem}">
+                    <local:MenuItem Title="Home" Icon="icon.png" TargetType="{x:Type local:Views.HomePage}" />
+                    <local:MenuItem Title="Search" Icon="icon.png" TargetType="{x:Type local:Views.CategoriesPage}" />
+                    <local:MenuItem Title="Categories" Icon="icon.png" TargetType="{x:Type local:Views.CategoriesPage}" />
+                    <local:MenuItem Title="Tags" Icon="icon.png" TargetType="{x:Type local:Views.RecipeListPage}" />
+                    <local:MenuItem Title="Shopping Lists" Icon="icon.png" TargetType="{x:Type local:Views.RecipeListPage}" />
+                    <local:MenuItem Title="All Recipes" Icon="icon.png" TargetType="{x:Type local:Views.RecipeListPage}" />
+                    <local:MenuItem Title="Settings" Icon="icon.png" TargetType="{x:Type local:Views.RecipeListPage}" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding Icon}"
+                                   HeightRequest="40" />
+                            <Label Text="{Binding Title}"
+                                   Style="{StaticResource MenuItemStyle}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
