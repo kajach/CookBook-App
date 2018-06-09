@@ -4,9 +4,7 @@
              x:Class="CookBook.Views.RecipeListPage"
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="Recipes">
-    <ListView x:Name="recipeList"
-              ItemsSource="{Binding Recipes}"
-              ItemTapped="OnItemTapped"
+    <ListView ItemsSource="{Binding Recipes}"
               CachingStrategy="RecycleElement"
               SeparatorVisibility="None"
               Margin="10"

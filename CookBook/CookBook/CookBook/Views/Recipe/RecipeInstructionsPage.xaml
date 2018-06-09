@@ -4,11 +4,9 @@
              x:Class="CookBook.Views.RecipeInstructionsPage"
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="Instructions">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+    <StackLayout>
+        <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
 </ContentPage>

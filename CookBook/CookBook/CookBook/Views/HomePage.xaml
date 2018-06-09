@@ -10,11 +10,11 @@
             <StackLayout BackgroundColor="{StaticResource PrimaryColor}">
                 <!--<SearchBar Placeholder="Search for "
                            BackgroundColor="{StaticResource TextBackgroundColor}"
-                           Margin="10"/>-->
+                           Margin="10,5,10,10"/>-->
                 <BoxView BackgroundColor="White" 
                          HorizontalOptions="FillAndExpand" 
                          VerticalOptions="FillAndExpand"
-                         Margin="10"/>
+                         Margin="10,5,10,10"/>
             </StackLayout>
             <Grid>
                 <Image Source="{local:ImageResource Images.herobanner.jpg}"

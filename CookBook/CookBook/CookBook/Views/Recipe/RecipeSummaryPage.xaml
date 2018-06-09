@@ -4,11 +4,15 @@
              x:Class="CookBook.Views.RecipeSummaryPage"
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="Summary">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <ScrollView Orientation="Vertical">
+        <StackLayout Spacing="0">
+            <Grid>
+                <Image Source="{Binding MainImage}"
+                       Aspect="AspectFill"
+                       HeightRequest="200"/>
+                <Label Text="{Binding Name}"
+                       Style="{StaticResource HeadingStyle}"/>
+            </Grid>
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

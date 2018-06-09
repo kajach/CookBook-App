@@ -1,13 +1,11 @@
 ﻿using System;
 
-namespace CookBook
+namespace CookBook.Models
 {
-    public class MenuItem
+    public class MainMenuItem
     {
         public string Title { get; set; }
-
         public string Icon { get; set; }
-
-        public Type TargetType { get; set; }
+        public string PageName { get; set; }
     }
 }

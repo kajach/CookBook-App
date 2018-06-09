@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Autofac;assembly=Prism.Autofac.Forms"
              x:Class="CookBook.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -12,6 +13,11 @@
             <Color x:Key="TextBackgroundColor">#FFFFFF</Color>
             <Color x:Key="DarkTextColor">#333333</Color>
             <Color x:Key="LightTextColor">#FFFFFF</Color>
+            <Style x:Key="MenuListStyle" TargetType="ListView">
+                <Setter Property="SeparatorVisibility" Value="None" />
+                <Setter Property="RowHeight" Value="50" />
+                <Setter Property="Margin" Value="20,5,10,10" />
+            </Style>
             <Style x:Key="MenuTitleStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
                 <Setter Property="FontSize" Value="20" />
@@ -59,4 +65,4 @@
             </Style>
         </ResourceDictionary>
     </Application.Resources>
-</Application>
+</prism:PrismApplication>

@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                  xmlns:local="clr-namespace:CookBook"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+                  xmlns:models="clr-namespace:CookBook.Models"
                   xmlns:views="clr-namespace:CookBook.Views"
-                  x:Class="CookBook.MainPage">
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="CookBook.Views.MainPage">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
             <StackLayout Orientation="Vertical"
@@ -23,20 +26,20 @@
                     </StackLayout>
                 </StackLayout>
                 <!--Navigation List-->
-                <ListView x:Name="navigationList"
-                          ItemSelected="OnMenuItemSelected"
-                          SeparatorVisibility="None"
-                          RowHeight="50"
-                          Margin="20,5,10,10">
+                <ListView SelectedItem="{Binding SelectedMenuItem}"
+                          Style="{StaticResource MenuListStyle}">
+                    <ListView.Behaviors>
+                        <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding NavigateCommand}" />
+                    </ListView.Behaviors>
                     <ListView.ItemsSource>
-                        <x:Array Type="{x:Type local:MenuItem}">
-                            <local:MenuItem Title="Home" Icon="icon.png" TargetType="{x:Type views:HomePage}" />
-                            <local:MenuItem Title="Search" Icon="icon.png" TargetType="{x:Type views:CategoriesPage}" />
-                            <local:MenuItem Title="Categories" Icon="icon.png" TargetType="{x:Type views:CategoriesPage}" />
-                            <local:MenuItem Title="Tags" Icon="icon.png" TargetType="{x:Type views:RecipeListPage}" />
-                            <local:MenuItem Title="Shopping Lists" Icon="icon.png" TargetType="{x:Type views:RecipeListPage}" />
-                            <local:MenuItem Title="All Recipes" Icon="icon.png" TargetType="{x:Type views:RecipeListPage}" />
-                            <local:MenuItem Title="Settings" Icon="icon.png" TargetType="{x:Type views:RecipeListPage}" />
+                        <x:Array Type="{x:Type models:MainMenuItem}">
+                            <models:MainMenuItem Title="Home" Icon="icon.png" PageName="HomePage" />
+                            <models:MainMenuItem Title="Search" Icon="icon.png" PageName="CategoriesPage" />
+                            <models:MainMenuItem Title="Categories" Icon="icon.png" PageName="CategoriesPage" />
+                            <models:MainMenuItem Title="Tags" Icon="icon.png" PageName="RecipeListPage" />
+                            <models:MainMenuItem Title="Shopping Lists" Icon="icon.png" PageName="RecipeListPage" />
+                            <models:MainMenuItem Title="All Recipes" Icon="icon.png" PageName="RecipeListPage" />
+                            <models:MainMenuItem Title="Settings" Icon="icon.png" PageName="RecipeListPage" />
                         </x:Array>
                     </ListView.ItemsSource>
                     <ListView.ItemTemplate>

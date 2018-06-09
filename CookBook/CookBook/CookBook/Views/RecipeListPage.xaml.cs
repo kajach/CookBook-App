@@ -1,5 +1,4 @@
-﻿using CookBook.ViewModels;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace CookBook.Views
@@ -10,18 +9,17 @@ namespace CookBook.Views
         public RecipeListPage()
         {
             InitializeComponent();
-
-            BindingContext = new RecipeListViewModel();
         }
 
-        private async void OnItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (e.Item == null)
-                return;
+        //private async void OnItemTapped(object sender, ItemTappedEventArgs e)
+        //{
+        //    var item = e.Item as Recipe;
+        //    if (item == null)
+        //        return;
+                
+        //    ((ListView)sender).SelectedItem = null;
 
-            ((ListView)sender).SelectedItem = null;
-
-            await Navigation.PushAsync(new RecipeDetailPage());
-        }
+        //    await Navigation.PushAsync(new RecipeDetailPage());
+        //}
     }
 }

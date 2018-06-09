@@ -1,17 +1,14 @@
-﻿using CookBook.ViewModels;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace CookBook.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RecipeDetailPage : TabbedPage
 	{
-		public RecipeDetailPage ()
+		public RecipeDetailPage()
 		{
 			InitializeComponent ();
-
-            BindingContext = new RecipeDetailViewModel();
         }
 	}
 }

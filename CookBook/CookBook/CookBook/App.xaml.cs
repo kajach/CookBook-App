@@ -1,26 +1,23 @@
-﻿using CookBook.Data;
-using CookBook.Interfaces;
-using CookBook.Models;
-using CookBook.Services;
+﻿using CookBook.Interfaces;
+using CookBook.Views;
+using Prism;
+using Prism.Autofac;
+using Prism.Ioc;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CookBook
 {
-    public partial class App : Application
-	{
-        private static IRecipeService _recipeService;
-        private static ICategoryService _categoryService;
-        private static IIngredientService _ingredientService;
+    public partial class App : PrismApplication
+    {
         private static string _dbPath;
 
-        public App ()
-		{
-			InitializeComponent();
+        public App() : this(null) { }
 
-			MainPage = new MainPage();
-		}
+        public App(IPlatformInitializer initializer) : base(initializer) { }
 
-        public static string dbPath
+        public static string DbPath
         {
             get
             {
@@ -32,44 +29,21 @@ namespace CookBook
             }
         }
 
-
-        public static IRecipeService RecipeService
+        protected override async void OnInitialized()
         {
-            get
-            {
-                if (_recipeService == null)
-                {
-                    IRepository<Recipe> recipeRepo = new BaseRepository<Recipe>(dbPath);
-                    _recipeService = new RecipeService(recipeRepo);
-                }
-                return _recipeService;
-            }
+            InitializeComponent();
+
+            await NavigationService.NavigateAsync("MainPage");
         }
 
-        public static ICategoryService CategoryService
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            get
-            {
-                if (_categoryService == null)
-                {
-                    IRepository<Category> categoryRepo = new BaseRepository<Category>(dbPath);
-                    _categoryService = new CategoryService(categoryRepo);
-                }
-                return _categoryService;
-            }
-        }
-
-        public static IIngredientService IngredientService
-        {
-            get
-            {
-                if (_ingredientService == null)
-                {
-                    IRepository<Ingredient> ingredientRepo = new BaseRepository<Ingredient>(dbPath);
-                    _ingredientService = new IngredientService(ingredientRepo);
-                }
-                return _ingredientService;
-            }
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<CategoriesPage>();
+            containerRegistry.RegisterForNavigation<HomePage>();
+            containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<RecipeDetailPage>();
+            containerRegistry.RegisterForNavigation<RecipeListPage>();
         }
 
         protected override void OnStart ()

@@ -1,13 +1,15 @@
 ﻿using CookBook.Models;
+using Prism.Navigation;
 using System.Collections.ObjectModel;
 
 namespace CookBook.ViewModels
 {
-    public class RecipeListViewModel : BaseViewModel
+    public class RecipeListPageViewModel : BaseViewModel
     {
         public ObservableCollection<Recipe> Recipes { get; set; }
 
-        public RecipeListViewModel()
+        public RecipeListPageViewModel(INavigationService navigationService)
+            : base(navigationService)
         {
             Recipes = new ObservableCollection<Recipe>() {
                 new Recipe()
