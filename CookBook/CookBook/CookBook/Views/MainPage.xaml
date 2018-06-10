@@ -9,13 +9,9 @@
                   x:Class="CookBook.Views.MainPage">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
-            <StackLayout Orientation="Vertical"
-                         BackgroundColor="{StaticResource TextBackgroundColor}">
-                <!--Navigation Title-->
-                <StackLayout Orientation="Horizontal" 
-                             BackgroundColor="{StaticResource PrimaryColor}"
-                             Padding="20"
-                             Spacing="15">
+            <StackLayout Style="{StaticResource MenuStyle}">
+                <!--Menu Header-->
+                <StackLayout Style="{StaticResource MenuHeaderStyle}">
                     <Image Source="icon.png"
                            HeightRequest="50"/>
                     <StackLayout>
@@ -25,7 +21,7 @@
                                Style="{StaticResource MenuSubTitleStyle}"/>
                     </StackLayout>
                 </StackLayout>
-                <!--Navigation List-->
+                <!--Menu List-->
                 <ListView SelectedItem="{Binding SelectedMenuItem}"
                           Style="{StaticResource MenuListStyle}">
                     <ListView.Behaviors>
@@ -45,11 +41,11 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal">
+                                <StackLayout Style="{StaticResource MenuItemStyle}">
                                     <Image Source="{Binding Icon}"
-                                           HeightRequest="40" />
+                                           HeightRequest="35" />
                                     <Label Text="{Binding Title}"
-                                           Style="{StaticResource MenuItemStyle}"/>
+                                           Style="{StaticResource MenuTextStyle}"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

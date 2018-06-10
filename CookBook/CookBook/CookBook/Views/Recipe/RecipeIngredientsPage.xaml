@@ -14,10 +14,10 @@
               RowHeight="105">
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type models:Recipe}">
-                    <models:Recipe Name="Home" MainImage="icon.png" Category="HomePage" />
-                    <models:Recipe Name="Search" MainImage="icon.png" Category="CategoriesPage" />
-                    <models:Recipe Name="Categories" MainImage="icon.png" Category="CategoriesPage" />
-                    <models:Recipe Name="Tags" MainImage="icon.png" Category="RecipeListPage" />
+                    <models:Recipe Name="Home" MainImage="recipe_001.jpg" Category="Spaghetti" />
+                    <models:Recipe Name="Search" MainImage="recipe_002.jpg" Category="Lecho" />
+                    <models:Recipe Name="Categories" MainImage="recipe_003.jpg" Category="Carbonara" />
+                    <models:Recipe Name="Tags" MainImage="recipe_004.jpg" Category="Chicken" />
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>

@@ -5,18 +5,24 @@
              x:Class="CookBook.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="PrimaryColor">#AF0B0B</Color>
-            <Color x:Key="PrimaryColorDark">#910000</Color>
-            <Color x:Key="PrimaryColorLight">#D41C1C</Color>
-            <Color x:Key="SecondaryColor">#007000</Color>
+            <Color x:Key="PrimaryColor">#AF210B</Color>
+            <Color x:Key="PrimaryColorDark">#911400</Color>
+            <Color x:Key="PrimaryColorLight">#D3351C</Color>
+            <Color x:Key="SecondaryColor">#498400</Color>
+            <Color x:Key="SecondaryColorDark">#498400</Color>
             <Color x:Key="PageBackgroundColor">#F5F5F5</Color>
-            <Color x:Key="TextBackgroundColor">#FFFFFF</Color>
+            <Color x:Key="TextBackgroundColor">#ffffff</Color>
             <Color x:Key="DarkTextColor">#333333</Color>
-            <Color x:Key="LightTextColor">#FFFFFF</Color>
-            <Style x:Key="MenuListStyle" TargetType="ListView">
-                <Setter Property="SeparatorVisibility" Value="None" />
-                <Setter Property="RowHeight" Value="50" />
-                <Setter Property="Margin" Value="20,5,10,10" />
+            <Color x:Key="LightTextColor">#ffffff</Color>
+            <Style x:Key="MenuStyle" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource TextBackgroundColor}" />
+                <Setter Property="Spacing" Value="0" />
+            </Style>
+            <Style x:Key="MenuHeaderStyle" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="Spacing" Value="15" />
+                <Setter Property="Padding" Value="20" />
             </Style>
             <Style x:Key="MenuTitleStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
@@ -26,10 +32,22 @@
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
                 <Setter Property="FontSize" Value="15" />
             </Style>
-            <Style x:Key="MenuItemStyle" TargetType="Label">
+            <Style x:Key="MenuListStyle" TargetType="ListView">
+                <Setter Property="SeparatorVisibility" Value="None" />
+                <Setter Property="RowHeight" Value="60" />
+            </Style>
+            <Style x:Key="MenuItemStyle" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="Padding" Value="20,0,10,0" />
+            </Style>
+            <Style x:Key="MenuTextStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
                 <Setter Property="FontSize" Value="15" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="ActionBarSearch" TargetType="SearchBar">
+                <Setter Property="BackgroundColor" Value="{StaticResource TextBackgroundColor}" />
+                <Setter Property="Margin" Value="10,5,10,10" />
             </Style>
             <Style x:Key="HeroHeadingStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
@@ -51,8 +69,8 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
             <Style x:Key="MoreButtonStyle" TargetType="Button">
-                <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
             <Style x:Key="HeadingStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
