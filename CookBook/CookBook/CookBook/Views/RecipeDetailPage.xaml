@@ -5,7 +5,9 @@
             x:Class="CookBook.Views.RecipeDetailPage"
             BackgroundColor="{StaticResource PageBackgroundColor}"
             Title="Recipe Details">
-    <views:RecipeSummaryPage/>
-    <views:RecipeIngredientsPage/>
-    <views:RecipeInstructionsPage/>
+    <TabbedPage.Children>
+        <views:RecipeSummaryPage/>
+        <views:RecipeIngredientsPage/>
+        <views:RecipeInstructionsPage/>
+    </TabbedPage.Children>
 </TabbedPage>

@@ -1,8 +1,5 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Navigation;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace CookBook.ViewModels
 {
@@ -15,22 +12,22 @@ namespace CookBook.ViewModels
             _navigationService = navigationService;
         }
 
-        public void OnNavigatedFrom(NavigationParameters parameters)
+        public virtual void OnNavigatedFrom(NavigationParameters parameters)
         {
             
         }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
+        public virtual void OnNavigatedTo(NavigationParameters parameters)
         {
             
         }
 
-        public void OnNavigatingTo(NavigationParameters parameters)
+        public virtual void OnNavigatingTo(NavigationParameters parameters)
         {
             
         }
 
-        public void Destroy()
+        public virtual void Destroy()
         {
             
         }

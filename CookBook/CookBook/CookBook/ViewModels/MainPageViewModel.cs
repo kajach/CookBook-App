@@ -7,11 +7,11 @@ namespace CookBook.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
-        private MainMenuItem selectedMenuItem;
+        private MainMenuItem _selectedMenuItem;
         public MainMenuItem SelectedMenuItem
         {
-            get => selectedMenuItem;
-            set => SetProperty(ref selectedMenuItem, value);
+            get => _selectedMenuItem;
+            set => SetProperty(ref _selectedMenuItem, value);
         }
 
         public DelegateCommand NavigateCommand { get; private set; }

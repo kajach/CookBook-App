@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              x:Class="CookBook.Views.RecipeListPage"
+             x:Name="recipeListPage"
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="Recipes">
     <ListView ItemsSource="{Binding Recipes}"
@@ -9,6 +11,11 @@
               SeparatorVisibility="None"
               Margin="10"
               RowHeight="105">
+        <ListView.Behaviors>
+            <behaviors:EventToCommandBehavior EventName="ItemTapped"
+                                              EventArgsParameterPath="Item"
+                                              Command="{Binding BindingContext.RecipeSelectedCommand,Source={x:Reference recipeListPage}}" />
+        </ListView.Behaviors>
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
