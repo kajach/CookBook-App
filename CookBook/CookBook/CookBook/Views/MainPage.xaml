@@ -29,13 +29,14 @@
                     </ListView.Behaviors>
                     <ListView.ItemsSource>
                         <x:Array Type="{x:Type models:MainMenuItem}">
-                            <models:MainMenuItem Title="Home" Icon="icon.png" PageName="HomePage" />
-                            <models:MainMenuItem Title="Search" Icon="icon.png" PageName="CategoriesPage" />
-                            <models:MainMenuItem Title="Categories" Icon="icon.png" PageName="CategoriesPage" />
-                            <models:MainMenuItem Title="Tags" Icon="icon.png" PageName="RecipeListPage" />
-                            <models:MainMenuItem Title="Shopping Lists" Icon="icon.png" PageName="RecipeListPage" />
-                            <models:MainMenuItem Title="All Recipes" Icon="icon.png" PageName="RecipeListPage" />
-                            <models:MainMenuItem Title="Settings" Icon="icon.png" PageName="RecipeListPage" />
+                            <models:MainMenuItem Title="Home" Icon="home.png" PageName="HomePage" />
+                            <models:MainMenuItem Title="Search" Icon="search.png" PageName="CategoriesPage" />
+                            <models:MainMenuItem Title="Categories" Icon="folder.png" PageName="CategoriesPage" />
+                            <models:MainMenuItem Title="Tags" Icon="tag.png" PageName="RecipeListPage" />
+                            <models:MainMenuItem Title="Shopping Lists" Icon="groceries.png" PageName="RecipeListPage" />
+                            <models:MainMenuItem Title="Favourites" Icon="like.png" PageName="RecipeListPage" />
+                            <models:MainMenuItem Title="Recipe Spinner" Icon="food.png" PageName="RecipeListPage" />
+                            <models:MainMenuItem Title="Settings" Icon="settings.png" PageName="RecipeListPage" />
                         </x:Array>
                     </ListView.ItemsSource>
                     <ListView.ItemTemplate>
