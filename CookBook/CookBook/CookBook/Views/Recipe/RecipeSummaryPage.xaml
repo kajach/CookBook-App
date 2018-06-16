@@ -7,14 +7,26 @@
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="Summary">
     <ScrollView Orientation="Vertical">
-        <StackLayout Spacing="0">
-            <Grid>
-                <Image Source="{Binding Recipe.MainImage}"
-                       Aspect="AspectFill"
-                       HeightRequest="200"/>
-                <Label Text="{Binding Recipe.Name}"
-                       Style="{StaticResource HeadingStyle}"/>
+        <StackLayout>
+            <Image Source="recipe_002.jpg"
+                   Aspect="AspectFill"
+                   HeightRequest="200"/>
+            <Grid Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <BoxView Style="{StaticResource SectionHeaderLineStyle}"
+                         Grid.Row="0"
+                         Grid.Column="0"/>
+                <Label Text="Spaghetti" 
+                       Style="{StaticResource SectionHeaderTextStyle}"
+                       Grid.Row="0"
+                       Grid.Column="1"/>
             </Grid>
+            <Label Text="Main Dish"
+                   Style="{StaticResource HeaderStyle}"
+                   Margin="10,0,10,10" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

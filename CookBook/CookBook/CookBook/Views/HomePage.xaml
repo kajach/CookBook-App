@@ -6,30 +6,49 @@
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="YACA">
     <ScrollView Orientation="Vertical">
-        <StackLayout Spacing="0">
-            <StackLayout BackgroundColor="{StaticResource PrimaryColor}">
-                <SearchBar Placeholder="Search for "
-                           Style="{StaticResource ActionBarSearch}"/>
-                <!--<BoxView BackgroundColor="White" 
-                         HorizontalOptions="FillAndExpand" 
-                         VerticalOptions="FillAndExpand"
-                         Margin="10,5,10,10"/>-->
-            </StackLayout>
-            <Grid>
+        <StackLayout>
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <StackLayout BackgroundColor="{StaticResource PrimaryColor}">
+                    <!--<SearchBar Placeholder="Search for "
+                           Style="{StaticResource HeroSearchBar}"/>-->
+                    <BoxView BackgroundColor="White" 
+                             HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="FillAndExpand"
+                             Margin="10,0,10,10"
+                             Grid.Column="0"
+                             Grid.Row="0"/>
+                </StackLayout>
                 <Image Source="{local:ImageResource Images.herobanner.jpg}"
-                       Aspect="AspectFill"
-                       HeightRequest="200" />
+                       Style="{StaticResource HeroImageStyle}"
+                       Grid.Column="0"
+                       Grid.Row="1"/>
                 <Label Text="What's cooking today?"
-                       Style="{StaticResource HeroHeadingStyle}"/>
+                       Style="{StaticResource HeroHeaderStyle}"
+                       Grid.Column="0"
+                       Grid.Row="1"/>
             </Grid>
-            <StackLayout Orientation="Horizontal" Margin="10,5,10,0">
-                <BoxView Style="{StaticResource LineHeadingStyle}"/>
+            <Grid Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <BoxView Style="{StaticResource SectionHeaderLineStyle}"
+                         Grid.Row="0"
+                         Grid.Column="0"/>
                 <Label Text="Make it spicy!" 
-                       Style="{StaticResource SectionHeadingStyle}"/>
+                       Style="{StaticResource SectionHeaderTextStyle}"
+                       Grid.Row="0"
+                       Grid.Column="1"/>
                 <Button Text="View More" 
-                        Style="{StaticResource MoreButtonStyle}"/>
-            </StackLayout>
-            <Grid Margin="10,5,10,0">
+                        Style="{StaticResource SectionHeaderMoreStyle}"
+                        Grid.Row="0"
+                        Grid.Column="2"/>
+            </Grid>
+            <Grid Margin="10,0,10,0">
                 <StackLayout BackgroundColor="{StaticResource TextBackgroundColor}"
                              Grid.Column="0"
                              Grid.Row="0">
@@ -37,7 +56,7 @@
                            Aspect="AspectFill"
                            HeightRequest="150" />
                     <Label Text="Chicken with dried tomatoes, bacon and asparagus"
-                           Style="{StaticResource HeadingStyle}"
+                           Style="{StaticResource HeaderStyle}"
                            Margin="10,5,10,10" />
                 </StackLayout>
                 <StackLayout BackgroundColor="{StaticResource TextBackgroundColor}"
@@ -47,7 +66,7 @@
                            Aspect="AspectFill"
                            HeightRequest="150" />
                     <Label Text="Spaghetti Bolognese"
-                           Style="{StaticResource HeadingStyle}"
+                           Style="{StaticResource HeaderStyle}"
                            Margin="10,5,10,10" />
                 </StackLayout>
             </Grid>

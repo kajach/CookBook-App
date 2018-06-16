@@ -24,7 +24,6 @@
                         
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
                         <Grid.RowDefinitions>
@@ -41,9 +40,9 @@
                                      Grid.Column="1"
                                      Grid.Row="0">
                             <Label Text="{Binding Name}"
-                                   Style="{StaticResource HeadingStyle}"/>
+                                   Style="{StaticResource HeaderStyle}"/>
                             <Label Text="{Binding Category}"
-                                   Style="{StaticResource SubheadingStyle}"/>
+                                   Style="{StaticResource SubheaderStyle}"/>
                         </StackLayout>
                     </Grid>
                 </ViewCell>

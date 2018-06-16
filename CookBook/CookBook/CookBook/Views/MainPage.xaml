@@ -12,7 +12,7 @@
             <StackLayout Style="{StaticResource MenuStyle}">
                 <!--Menu Header-->
                 <StackLayout Style="{StaticResource MenuHeaderStyle}">
-                    <Image Source="icon.png"
+                    <Image Source="chef.png"
                            HeightRequest="50"/>
                     <StackLayout>
                         <Label Text="YACA" 
@@ -35,7 +35,7 @@
                             <models:MainMenuItem Title="Tags" Icon="tag.png" PageName="RecipeListPage" />
                             <models:MainMenuItem Title="Shopping Lists" Icon="groceries.png" PageName="RecipeListPage" />
                             <models:MainMenuItem Title="Favourites" Icon="like.png" PageName="RecipeListPage" />
-                            <models:MainMenuItem Title="Recipe Spinner" Icon="food.png" PageName="RecipeListPage" />
+                            <models:MainMenuItem Title="Recipe Spinner" Icon="dish.png" PageName="RecipeListPage" />
                             <models:MainMenuItem Title="Settings" Icon="settings.png" PageName="RecipeListPage" />
                         </x:Array>
                     </ListView.ItemsSource>
@@ -44,7 +44,7 @@
                             <ViewCell>
                                 <StackLayout Style="{StaticResource MenuItemStyle}">
                                     <Image Source="{Binding Icon}"
-                                           HeightRequest="35" />
+                                           HeightRequest="30" />
                                     <Label Text="{Binding Title}"
                                            Style="{StaticResource MenuTextStyle}"/>
                                 </StackLayout>

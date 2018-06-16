@@ -8,7 +8,7 @@
     <StackLayout Style="{StaticResource MenuStyle}">
         <!--Menu Header-->
         <StackLayout Style="{StaticResource MenuHeaderStyle}">
-            <Image Source="icon.png"
+            <Image Source="chef.png"
                    HeightRequest="50"/>
             <StackLayout>
                 <Label Text="YACA" 
@@ -22,21 +22,22 @@
                   Style="{StaticResource MenuListStyle}">
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type models:MainMenuItem}">
-                    <models:MainMenuItem Title="Home" Icon="icon.png" PageName="HomePage" />
-                    <models:MainMenuItem Title="Search" Icon="icon.png" PageName="CategoriesPage" />
-                    <models:MainMenuItem Title="Categories" Icon="icon.png" PageName="CategoriesPage" />
-                    <models:MainMenuItem Title="Tags" Icon="icon.png" PageName="RecipeListPage" />
-                    <models:MainMenuItem Title="Shopping Lists" Icon="icon.png" PageName="RecipeListPage" />
-                    <models:MainMenuItem Title="All Recipes" Icon="icon.png" PageName="RecipeListPage" />
-                    <models:MainMenuItem Title="Settings" Icon="icon.png" PageName="RecipeListPage" />
+                    <models:MainMenuItem Title="Home" Icon="home.png" PageName="HomePage" />
+                    <models:MainMenuItem Title="Search" Icon="search.png" PageName="CategoriesPage" />
+                    <models:MainMenuItem Title="Categories" Icon="folder.png" PageName="CategoriesPage" />
+                    <models:MainMenuItem Title="Tags" Icon="tag.png" PageName="RecipeListPage" />
+                    <models:MainMenuItem Title="Shopping Lists" Icon="groceries.png" PageName="RecipeListPage" />
+                    <models:MainMenuItem Title="Favourites" Icon="like.png" PageName="RecipeListPage" />
+                    <models:MainMenuItem Title="Recipe Spinner" Icon="dish.png" PageName="RecipeListPage" />
+                    <models:MainMenuItem Title="Settings" Icon="settings.png" PageName="RecipeListPage" />
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Style="{StaticResource MenuItemStyle}" BackgroundColor="Aqua">
+                        <StackLayout Style="{StaticResource MenuItemStyle}">
                             <Image Source="{Binding Icon}"
-                                   HeightRequest="35" />
+                                   HeightRequest="30" />
                             <Label Text="{Binding Title}"
                                    Style="{StaticResource MenuTextStyle}"/>
                         </StackLayout>
