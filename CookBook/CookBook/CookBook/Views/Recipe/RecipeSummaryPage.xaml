@@ -7,26 +7,54 @@
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="Summary">
     <ScrollView Orientation="Vertical">
-        <StackLayout>
+        <StackLayout Spacing="10" Margin="10">
             <Image Source="recipe_002.jpg"
                    Aspect="AspectFill"
-                   HeightRequest="200"/>
-            <Grid Margin="10,0,10,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-                <BoxView Style="{StaticResource SectionHeaderLineStyle}"
-                         Grid.Row="0"
-                         Grid.Column="0"/>
-                <Label Text="Spaghetti" 
-                       Style="{StaticResource SectionHeaderTextStyle}"
-                       Grid.Row="0"
-                       Grid.Column="1"/>
-            </Grid>
-            <Label Text="Main Dish"
-                   Style="{StaticResource HeaderStyle}"
-                   Margin="10,0,10,10" />
+                   HeightRequest="150"/>
+            <!-- Page Title -->
+            <StackLayout>
+                <Label Text="Spaghetti Bolognese" 
+                       Style="{StaticResource SectionTitleStyle}" />
+                <Label Text="This pasta is awesome. You can eat it everyday. It tastes the best with red wine."
+                       Style="{StaticResource CaptionTextStyle}" />
+                <BoxView Style="{StaticResource VerticalLineStyle}" />
+            </StackLayout>
+            <FlexLayout JustifyContent="Center"
+                        Wrap="Wrap">
+                <StackLayout Style="{StaticResource IconWithTextStyle}">
+                    <Image Source="dish.png"
+                           HeightRequest="35"/>
+                    <StackLayout Spacing="0" 
+                                 VerticalOptions="Center">
+                        <Label Text="Cusine" 
+                               Style="{StaticResource BodyTextStyle}"/>
+                        <Label Text="Italian" 
+                               Style="{StaticResource AccentTextStyle}"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Style="{StaticResource IconWithTextStyle}">
+                    <Image Source="clock.png"
+                           HeightRequest="35"/>
+                    <StackLayout Spacing="0"
+                                 VerticalOptions="Center">
+                        <Label Text="Prep Time" 
+                               Style="{StaticResource BodyTextStyle}"/>
+                        <Label Text="30 min" 
+                               Style="{StaticResource AccentTextStyle}"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Style="{StaticResource IconWithTextStyle}">
+                    <Image Source="restaurant.png"
+                           HeightRequest="35"/>
+                    <StackLayout Spacing="0" 
+                                 VerticalOptions="Center">
+                        <Label Text="Serves" 
+                               Style="{StaticResource BodyTextStyle}"/>
+                        <Label Text="2 people" 
+                               Style="{StaticResource AccentTextStyle}"/>
+                    </StackLayout>
+                </StackLayout>
+            </FlexLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

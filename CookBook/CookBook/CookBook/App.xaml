@@ -5,15 +5,17 @@
              x:Class="CookBook.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="PrimaryColor">#AF210B</Color>
-            <Color x:Key="PrimaryColorDark">#911400</Color>
-            <Color x:Key="PrimaryColorLight">#D3351C</Color>
-            <Color x:Key="SecondaryColor">#498400</Color>
-            <Color x:Key="SecondaryColorDark">#498400</Color>
-            <Color x:Key="PageBackgroundColor">#F5F5F5</Color>
-            <Color x:Key="TextBackgroundColor">#ffffff</Color>
-            <Color x:Key="DarkTextColor">#333333</Color>
-            <Color x:Key="LightTextColor">#ffffff</Color>
+            <Color x:Key="PrimaryColor">#B00120</Color>
+            <Color x:Key="PrimaryColorDark">#710115</Color>
+            <Color x:Key="PrimaryColorLight">#FF9570</Color>
+            <Color x:Key="SecondaryColor">#4A271F</Color>
+            <Color x:Key="SecondaryColorDark">#281713</Color>
+            <Color x:Key="SecondaryColorLight">#DF9A8B</Color>
+            <Color x:Key="PageBackgroundColor">#FFF7F3</Color>
+            <Color x:Key="TextBackgroundColor">#FFF7F3</Color>
+            <Color x:Key="AccentColor">#B00120</Color>
+            <Color x:Key="DarkTextColor">#281713</Color>
+            <Color x:Key="LightTextColor">#FFF7F3</Color>
             <!-- Main Menu Styling -->
             <Style x:Key="MenuStyle" TargetType="StackLayout">
                 <Setter Property="BackgroundColor" Value="{StaticResource TextBackgroundColor}" />
@@ -31,7 +33,7 @@
             </Style>
             <Style x:Key="MenuSubTitleStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
-                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontSize" Value="16" />
             </Style>
             <Style x:Key="MenuListStyle" TargetType="ListView">
                 <Setter Property="SeparatorVisibility" Value="None" />
@@ -43,7 +45,7 @@
             </Style>
             <Style x:Key="MenuTextStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
-                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontSize" Value="16" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
             <!-- Home Page Header Styling -->
@@ -53,40 +55,60 @@
             </Style>
             <Style x:Key="HeroImageStyle" TargetType="Image">
                 <Setter Property="Aspect" Value="AspectFill" />
-                <Setter Property="HeightRequest" Value="200" />
-                <Setter Property="BackgroundColor" Value="IndianRed" />
+                <Setter Property="HeightRequest" Value="180" />
             </Style>
             <Style x:Key="HeroHeaderStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
-                <Setter Property="FontSize" Value="25" />
+                <Setter Property="FontSize" Value="26" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
-            <!-- Section Header Styling -->
-            <Style x:Key="SectionHeaderLineStyle" TargetType="BoxView">
-                <Setter Property="Color" Value="{StaticResource PrimaryColor}" />
-                <Setter Property="WidthRequest" Value="3" />
-                <Setter Property="HeightRequest" Value="20" />
-                <Setter Property="VerticalOptions" Value="Center" />
-            </Style>
-            <Style x:Key="SectionHeaderTextStyle" TargetType="Label">
+            <!-- Text -->
+            <Style x:Key="SectionTitleStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
-                <Setter Property="FontSize" Value="20" />
-                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
-            <Style x:Key="SectionHeaderMoreStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
+            <Style x:Key="BodyTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
+                <Setter Property="FontSize" Value="16" />
             </Style>
-            <!-- Recipe Listing Styling -->
+            <Style x:Key="CaptionTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Italic" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="AccentTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource AccentColor}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
             <Style x:Key="HeaderStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
-                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontSize" Value="16" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="LineBreakMode" Value="TailTruncation" />
             </Style>
             <Style x:Key="SubheaderStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
+            </Style>
+            <!-- Dividers -->
+            <Style x:Key="VerticalLineStyle" TargetType="BoxView">
+                <Setter Property="Color" Value="{StaticResource SecondaryColorDark}" />
+                <Setter Property="HeightRequest" Value="1" />
+            </Style>
+            <!-- Buttons -->
+            <Style x:Key="MoreButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
+            </Style>
+            <!-- Summary Icons Styling -->
+            <Style x:Key="IconWithTextStyle" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="Spacing" Value="15" />
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="Margin" Value="0,0,0,10" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

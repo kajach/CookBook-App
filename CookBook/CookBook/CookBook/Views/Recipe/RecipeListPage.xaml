@@ -10,7 +10,7 @@
               CachingStrategy="RecycleElement"
               SeparatorVisibility="None"
               Margin="10"
-              RowHeight="105">
+              RowHeight="85">
         <ListView.Behaviors>
             <behaviors:EventToCommandBehavior EventName="ItemTapped"
                                               EventArgsParameterPath="Item"
@@ -27,12 +27,12 @@
                         </Grid.ColumnDefinitions>
 
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="80"/>
                         </Grid.RowDefinitions>
 
                         <Image Source="{Binding MainImage}"
                                Aspect="AspectFill"
-                               HeightRequest="100"
+                               HeightRequest="80"
                                Grid.Column="0"
                                Grid.Row="0"/>
 

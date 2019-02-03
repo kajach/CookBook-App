@@ -11,9 +11,13 @@
         <ListView CachingStrategy="RecycleElement"
               SeparatorVisibility="None"
               Margin="10"
-              RowHeight="105">
+              RowHeight="85">
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type models:Recipe}">
+                    <models:Recipe Name="Home" MainImage="recipe_001.jpg" Category="Spaghetti" />
+                    <models:Recipe Name="Search" MainImage="recipe_002.jpg" Category="Lecho" />
+                    <models:Recipe Name="Categories" MainImage="recipe_003.jpg" Category="Carbonara" />
+                    <models:Recipe Name="Tags" MainImage="recipe_004.jpg" Category="Chicken" />
                     <models:Recipe Name="Home" MainImage="recipe_001.jpg" Category="Spaghetti" />
                     <models:Recipe Name="Search" MainImage="recipe_002.jpg" Category="Lecho" />
                     <models:Recipe Name="Categories" MainImage="recipe_003.jpg" Category="Carbonara" />
@@ -31,12 +35,12 @@
                             </Grid.ColumnDefinitions>
 
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="80"/>
                             </Grid.RowDefinitions>
 
                             <Image Source="{Binding MainImage}"
                                Aspect="AspectFill"
-                               HeightRequest="100"
+                               HeightRequest="80"
                                Grid.Column="0"
                                Grid.Row="0"/>
 

@@ -4,24 +4,22 @@
   <style name="MainTheme" parent="MainTheme.Base">
   </style>
   <!-- Base theme applied no matter what API -->
-  <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
-    <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+  <style name="MainTheme.Base" parent="Theme.AppCompat.Light">
+    
     <item name="windowNoTitle">true</item>
-    <!--We will be using the toolbar so no need to show ActionBar-->
     <item name="windowActionBar">false</item>
-    <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
-    <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">#AF210B</item>
-    <!-- colorPrimaryDark is used for the status bar -->
-    <item name="colorPrimaryDark">#911400</item>
-    <!-- colorAccent is used as the default value for colorControlActivated
-         which is used to tint widgets -->
-    <item name="colorAccent">#498400</item>
-    <!-- You can also set colorControlNormal, colorControlActivated
-         colorControlHighlight and colorSwitchThumbNormal. -->
     <item name="windowActionModeOverlay">true</item>
+    
+    <!-- colorPrimary is used for the default action bar background -->
+    <item name="colorPrimary">#B00120</item>
+    <!-- colorPrimaryDark is used for the status bar -->
+    <item name="colorPrimaryDark">#710115</item>
+    <!-- colorAccent is used as the default value for colorControlActivated which is used to tint widgets -->
+    <item name="colorAccent">#B00120</item>
 
+    <!-- styling for date picker -->
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+    
     <!-- styling for slected list view item -->
     <item name="android:colorPressedHighlight">@color/ListViewSelected</item>
     <item name="android:colorLongPressedHighlight">@color/ListViewHighlighted</item>
@@ -31,10 +29,10 @@
   </style>
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-    <item name="colorAccent">#498400</item>
+    <item name="colorAccent">#027302</item>
   </style>
 
-  <color name="ListViewSelected">#F5F5F5</color>
-  <color name="ListViewHighlighted">#F5F5F5</color>
+  <color name="ListViewSelected">#FFF7F3</color>
+  <color name="ListViewHighlighted">#FFF7F3</color>
   
 </resources>
